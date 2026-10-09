@@ -15,6 +15,75 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/js/main.js" defer></script>
+  <style>
+    /* ===== Privacy & Cookie Policy (modale) =====
+       Se i colori non coincidono con tokens.css, modifica solo queste 5 variabili. */
+    .policy, .site-footer__links {
+      --pol-bg: var(--surface, #141414);
+      --pol-text: var(--text, #f2f2f2);
+      --pol-muted: var(--text-muted, #b9b9b9);
+      --pol-accent: var(--gold, #e0b84c);
+      --pol-line: rgba(255, 255, 255, .14);
+    }
+    .site-footer__links { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; }
+    .site-footer__policy {
+      appearance: none; background: none; border: 0; padding: .25rem 0; margin: 0;
+      font: inherit; color: var(--pol-accent); cursor: pointer;
+      text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px;
+    }
+    .site-footer__policy:hover { text-decoration-thickness: 2px; }
+    .site-footer__policy:focus-visible,
+    .policy__close:focus-visible,
+    .policy__body a:focus-visible { outline: 2px solid var(--pol-accent); outline-offset: 3px; border-radius: 4px; }
+
+    .policy {
+      width: min(92vw, 42rem); max-height: min(85vh, 44rem);
+      padding: 0; margin: auto;
+      color: var(--pol-text); background: var(--pol-bg);
+      border: 1px solid var(--pol-accent); border-radius: 1rem;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .6);
+      overflow: hidden;
+    }
+    .policy[open] { display: flex; flex-direction: column; }
+    .policy::backdrop { background: rgba(0, 0, 0, .78); backdrop-filter: blur(4px); }
+    html:has(.policy[open]) { overflow: hidden; }
+
+    .policy__head {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--pol-line);
+    }
+    .policy__title { margin: 0; font-size: 1.15rem; line-height: 1.3; color: var(--pol-accent); }
+    .policy__close {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      min-width: 2.75rem; min-height: 2.75rem; padding: .5rem .9rem;
+      font: inherit; font-size: .95rem; color: var(--pol-text); cursor: pointer;
+      background: transparent; border: 1px solid var(--pol-line); border-radius: 999px;
+      transition: border-color .2s, color .2s;
+    }
+    .policy__close:hover { border-color: var(--pol-accent); color: var(--pol-accent); }
+    .policy__close .icon { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .policy__body { padding: 1.5rem; overflow-y: auto; overscroll-behavior: contain; }
+    .policy__body section + section { margin-top: 1.5rem; }
+    .policy__body h3 { margin: 0 0 .4rem; font-size: 1rem; color: var(--pol-accent); }
+    .policy__body p { margin: 0; line-height: 1.65; color: var(--pol-muted); }
+    .policy__body p + p { margin-top: .6rem; }
+    .policy__body a { color: var(--pol-text); text-underline-offset: .2em; }
+    .policy__body a:hover { color: var(--pol-accent); }
+
+    .policy__meta { margin: 0 0 1.5rem; font-size: .875rem; }
+    .policy__body strong { color: var(--pol-text); font-weight: 600; }
+    .policy__foot { display: flex; justify-content: flex-end; padding: 1rem 1.5rem; border-top: 1px solid var(--pol-line); }
+
+    @media (max-width: 480px) {
+      .policy__head, .policy__body, .policy__foot { padding-left: 1.1rem; padding-right: 1.1rem; }
+      .policy__close-label--head { display: none; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .policy[open] { animation: policy-in .22s ease-out; }
+      @keyframes policy-in { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+    }
+  </style>
 </head>
 <body>
 
@@ -563,7 +632,10 @@
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <p>© <span data-year>2026</span> Leonardo Ferretti · Graphic &amp; Web Designer · Toscana, Italia</p>
-    <a class="site-footer__top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg> Torna su</a>
+    <div class="site-footer__links">
+      <button class="site-footer__policy" type="button" aria-haspopup="dialog" data-policy-open>Privacy &amp; Cookie Policy</button>
+      <a class="site-footer__top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg> Torna su</a>
+    </div>
   </div>
 </footer>
 
@@ -579,6 +651,98 @@
     <button class="lightbox__btn lightbox__btn--next" type="button" data-lb-next aria-label="Immagine successiva"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
   </div>
 </dialog>
+
+<!-- Privacy & Cookie Policy -->
+<dialog class="policy" id="privacy-policy" aria-labelledby="policy-title" data-policy>
+  <div class="policy__head">
+    <h2 class="policy__title" id="policy-title">Privacy &amp; Cookie Policy</h2>
+    <button class="policy__close" type="button" data-policy-close aria-label="Chiudi l'informativa">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      <span class="policy__close-label--head">Chiudi</span>
+    </button>
+  </div>
+  <div class="policy__body">
+    <p class="policy__meta">Informativa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) e dell'art. 122 del D.Lgs. 196/2003 (Codice Privacy). Ultimo aggiornamento: <time datetime="2026-10-09">9 ottobre 2026</time>.</p>
+
+    <section aria-labelledby="pol-titolare">
+      <h3 id="pol-titolare">1. Titolare del trattamento</h3>
+      <p>Leonardo Ferretti — Email: <a href="mailto:gm.leonardo.ferretti@gmail.com">gm.leonardo.ferretti@gmail.com</a></p>
+    </section>
+
+    <section aria-labelledby="pol-finalita">
+      <h3 id="pol-finalita">2. Finalità del sito</h3>
+      <p>Il sito ha scopo puramente illustrativo e promozionale del portfolio professionale del titolare.</p>
+    </section>
+
+    <section aria-labelledby="pol-dati">
+      <h3 id="pol-dati">3. Dati trattati, finalità e base giuridica</h3>
+      <p>Sul sito non sono presenti moduli di contatto (form), registrazioni o newsletter, e il sito non raccoglie né archivia direttamente dati personali degli utenti. Possono tuttavia essere trattati i dati seguenti.</p>
+      <p><strong>a) Dati di navigazione.</strong> Per il solo fatto di visitare il sito, il server che lo ospita registra automaticamente alcuni dati tecnici (ad esempio indirizzo IP, data e ora della richiesta, pagine richieste, tipo di browser e dispositivo). Sono necessari al funzionamento e alla sicurezza del sito e sono trattati sulla base del legittimo interesse del titolare (art. 6, par. 1, lett. f GDPR). Non vengono usati per identificare o profilare l'utente e sono conservati per il tempo previsto dal fornitore di hosting, di norma limitato a pochi giorni o settimane.</p>
+      <p><strong>b) Comunicazioni spontanee.</strong> L'utente può contattare il titolare esclusivamente tramite i link diretti e-mail o telefono indicati nel sito. In questo caso il titolare tratta i dati che l'utente sceglie di comunicare (ad esempio nome, indirizzo e-mail, numero di telefono, contenuto del messaggio) al solo fine di rispondere alla richiesta, sulla base di misure precontrattuali o del legittimo interesse a riscontrare le richieste ricevute (art. 6, par. 1, lett. b ed f GDPR). I dati sono conservati per il tempo necessario a rispondere e, se ne nasce un rapporto professionale, per la sua durata e per gli obblighi di legge.</p>
+      <p>Il conferimento dei dati è facoltativo, ma senza di essi non è possibile rispondere alle richieste. Non è svolta alcuna attività di profilazione né alcun processo decisionale automatizzato.</p>
+    </section>
+
+    <section aria-labelledby="pol-destinatari">
+      <h3 id="pol-destinatari">4. Destinatari dei dati</h3>
+      <p>I dati non sono venduti né diffusi. Possono accedervi soltanto il fornitore del servizio di hosting del sito, in qualità di responsabile del trattamento, e i fornitori dei servizi tecnici indicati in questa informativa (Google, per i font), oltre alle autorità pubbliche, se richiesto dalla legge.</p>
+    </section>
+
+    <section aria-labelledby="pol-cookie">
+      <h3 id="pol-cookie">5. Cookie</h3>
+      <p>Il sito non utilizza cookie di profilazione o di tracciamento commerciale (come Google Analytics o Meta Pixel), né cookie di terze parti a fini pubblicitari. Vengono usati solo cookie tecnici strettamente necessari al funzionamento della pagina: per questo, ai sensi dell'art. 122 del Codice Privacy e delle Linee guida del Garante del 10 giugno 2021, non è richiesto il consenso dell'utente e non viene mostrato alcun banner.</p>
+      <p>L'utente può in ogni momento bloccare o eliminare i cookie dalle impostazioni del proprio browser; ciò potrebbe però influire sul corretto funzionamento di alcune parti del sito.</p>
+    </section>
+
+    <section aria-labelledby="pol-font">
+      <h3 id="pol-font">6. Google Fonts e trasferimenti extra-UE</h3>
+      <p>Per la resa tipografica il sito utilizza il servizio esterno Google Fonts, fornito da Google Ireland Limited (con sede in Irlanda; capogruppo Google LLC, Stati Uniti). Quando la pagina viene caricata, il browser dell'utente richiede i font ai server di Google, che ricevono quindi l'indirizzo IP e i dati tecnici della richiesta. Il trattamento si fonda sul legittimo interesse del titolare a offrire una resa grafica coerente del sito (art. 6, par. 1, lett. f GDPR).</p>
+      <p>Poiché Google LLC ha sede negli Stati Uniti, i dati possono essere trasferiti fuori dallo Spazio Economico Europeo; il trasferimento avviene sulla base delle garanzie adottate da Google, tra cui l'adesione al EU-U.S. Data Privacy Framework. Informazioni sul trattamento da parte di Google sono disponibili su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy<span class="visually-hidden"> (si apre in una nuova scheda)</span></a>.</p>
+    </section>
+
+    <section aria-labelledby="pol-link">
+      <h3 id="pol-link">7. Link a siti esterni</h3>
+      <p>Il sito contiene link a servizi di terze parti (ad esempio LinkedIn e Behance). Seguendo questi link l'utente lascia il sito e la raccolta di eventuali dati è regolata dalle informative dei rispettivi gestori, per le quali il titolare non è responsabile.</p>
+    </section>
+
+    <section aria-labelledby="pol-diritti">
+      <h3 id="pol-diritti">8. Diritti dell'interessato</h3>
+      <p>L'utente può in ogni momento chiedere al titolare l'accesso ai propri dati, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità e opporsi al trattamento fondato sul legittimo interesse (artt. 15-22 GDPR), scrivendo a <a href="mailto:gm.leonardo.ferretti@gmail.com">gm.leonardo.ferretti@gmail.com</a>.</p>
+      <p>Ha inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it<span class="visually-hidden"> (si apre in una nuova scheda)</span></a>) o all'autorità di controllo del proprio Paese di residenza.</p>
+    </section>
+
+    <section aria-labelledby="pol-modifiche">
+      <h3 id="pol-modifiche">9. Modifiche all'informativa</h3>
+      <p>Il titolare può aggiornare questa informativa, ad esempio in caso di modifiche al sito o alla normativa. La versione in vigore è sempre quella pubblicata in questa finestra, con la data di ultimo aggiornamento indicata in alto.</p>
+    </section>
+  </div>
+  <div class="policy__foot">
+    <button class="policy__close" type="button" data-policy-close>Chiudi</button>
+  </div>
+</dialog>
+
+<script>
+(function () {
+  var dlg = document.querySelector('[data-policy]');
+  var openers = document.querySelectorAll('[data-policy-open]');
+  if (!dlg || !openers.length) return;
+
+  function open() {
+    if (typeof dlg.showModal === 'function') dlg.showModal();
+    else dlg.setAttribute('open', '');
+    dlg.querySelector('.policy__body').scrollTop = 0;
+    dlg.querySelector('[data-policy-close]').focus();
+  }
+  function close() {
+    if (typeof dlg.close === 'function') dlg.close();
+    else dlg.removeAttribute('open');
+  }
+
+  openers.forEach(function (b) { b.addEventListener('click', open); });
+  dlg.querySelectorAll('[data-policy-close]').forEach(function (b) { b.addEventListener('click', close); });
+  // Clic sullo sfondo scuro = chiusura (Esc è gestito dal browser)
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+})();
+</script>
 
 </body>
 </html>

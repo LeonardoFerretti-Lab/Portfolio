@@ -876,3 +876,14 @@ html.lb-open { overflow: hidden; }
   .js .reveal { opacity: 1; transform: none; }
   .media:hover img { transform: none; }
 }
+
+.policy, .site-footer__links {
+  --pol-bg: #141414;
+  --pol-text: #f2f2f2;
+  --pol-muted: #b9b9b9;
+  
+  /* CAMBIA QUESTO: metti il codice colore che preferisci */
+  --pol-accent: #b6a766; /* Es. Oro standard del tuo tema */
+  
+  --pol-line: rgba(255, 255, 255, .14);
+}
