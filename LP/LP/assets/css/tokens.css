@@ -1,0 +1,62 @@
+/* Design tokens – ricavati dalle slide "Portfolio Leonardo Ferretti" (Behance, giugno 2026) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Sfondo – tema UX/UI (nero) */
+  --bg-0: #030303;
+  --bg-1: #0a0a0a;
+  --bg-2: #171717;
+  --bg-gradient: radial-gradient(120% 80% at 30% 0%, #23231d 0%, #0a0a0a 55%, #030303 100%);
+
+  /* Sfondo – tema Illustration (viola notte) */
+  --ill-bg-0: #1a162e;
+  --ill-bg-1: #24203d;
+  --ill-bg-2: #332f55;
+  --ill-bg-gradient: radial-gradient(120% 80% at 30% 0%, #353251 0%, #1f1b36 60%, #15122a 100%);
+
+  /* Oro / champagne */
+  --gold-700: #8a7d4a;
+  --gold-500: #b6a766;
+  --gold-300: #d1c592;
+  --gold-200: #e2dbb4;
+  --gold-100: #f1eddc;
+  --gold-gradient: linear-gradient(90deg, #b1a169 0%, #e2dbb4 45%, #f1f1e8 60%, #d1c592 85%, #b6a766 100%);
+
+  /* Testo */
+  --text: #f5f3ea;
+  --text-muted: #bdb9ab;
+
+  /* Card */
+  --card-bg: linear-gradient(145deg, rgba(40,40,34,.55) 0%, rgba(8,8,8,.9) 60%);
+  --card-border: 1px solid rgba(214, 199, 140, .55);
+  --card-radius: 22px;
+  --card-shadow: 0 12px 30px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.04);
+
+  /* Tipografia */
+  --font: 'Montserrat', system-ui, sans-serif;
+  --fs-display: clamp(2.6rem, 7vw, 6rem);   /* "Leonardo Ferretti" */
+  --fs-h2: clamp(1.6rem, 3vw, 2.4rem);      /* titoli progetto, MAIUSCOLO */
+  --fs-h3: 1.1rem;                          /* ABOUT ME, CONTACTS... */
+  --fs-body: 1rem;
+  --fs-small: .8rem;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 600;
+  --ls-caps: .04em;
+
+  /* Spaziature */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  --space-6: 96px;
+}
+
+/* Testo con sfumatura oro (titoli grandi) */
+.text-gold {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
