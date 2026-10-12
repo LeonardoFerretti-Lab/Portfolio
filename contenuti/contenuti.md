@@ -14,6 +14,10 @@ Lingua originale: inglese. Da decidere se il sito sarà in IT, EN o bilingue.
 ## About me
 Graphic Designer and Web Designer with an academic background in Graphic Design & Multimedia and an audiovisual foundation. Specialized in visual identity design, responsive website development, and the creation of digital content for web and social media. Skilled in video editing and storyboard, with a design approach that integrates creativity and strategy.
 
+**Aggiunta (uso dell'AI), approvata da Leonardo:**
+- EN: I also bring AI tools such as Claude into my workflow, to speed up research, copywriting and prototyping, while the design choices remain my own.
+- IT: Nel mio flusso di lavoro integro anche strumenti di intelligenza artificiale come Claude, per velocizzare ricerca, testi e prototipazione, mentre le scelte progettuali restano mie.
+
 Foto profilo: ritaglio presente nelle slide `ux-ui-02.webp` / `illustration-portfolio-02.webp` → **serve il file originale ad alta risoluzione**.
 
 ## Contatti
@@ -44,7 +48,8 @@ Foto profilo: ritaglio presente nelle slide `ux-ui-02.webp` / `illustration-port
 | LURT | Luglio 2022 | Sicilia | Documentary laboratory focused on territorial regeneration. Development of real-life filming techniques. |
 
 ## Strumenti
-Illustrator · Photoshop · After Effects · InDesign · Premiere Pro · Adobe XD · Figma · WordPress · Blender · Cinema 4D
+Illustrator · Photoshop · After Effects · InDesign · Premiere Pro · Adobe XD · Figma · WordPress · Blender
+*(Cinema 4D rimosso su richiesta di Leonardo)*
 
 ---
 
