@@ -1,10 +1,13 @@
 /* Leonardo Ferretti — Portfolio (prototipo)
-   Header, menu mobile, sezione attiva, comparsa allo scroll, lightbox. */
+   Header, menu mobile, cambio lingua, sezione attiva, comparsa allo scroll,
+   Privacy & Cookie Policy, lightbox. Usato sia dalla pagina inglese (principale)
+   sia da quella italiana in it/. */
 (() => {
   'use strict';
 
   const root = document.documentElement;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const isEn = root.lang === 'en';
 
   /* ---------- Anno nel footer ---------- */
   const year = document.querySelector('[data-year]');
@@ -23,7 +26,9 @@
 
   const setNav = (open) => {
     toggle.setAttribute('aria-expanded', String(open));
-    toggleLabel.textContent = open ? 'Chiudi il menu' : 'Apri il menu';
+    toggleLabel.textContent = isEn
+      ? (open ? 'Close the menu' : 'Open the menu')
+      : (open ? 'Chiudi il menu' : 'Apri il menu');
     nav.classList.toggle('is-open', open);
     root.classList.toggle('nav-open', open);
   };
@@ -37,6 +42,15 @@
     }
   });
   window.matchMedia('(min-width: 900px)').addEventListener('change', (e) => { if (e.matches) setNav(false); });
+
+  /* ---------- Cambio lingua ----------
+     Le due versioni hanno gli stessi id di sezione (#ux-ui, #contatti…):
+     passando da IT a EN si resta sulla stessa parte della pagina. */
+  document.querySelectorAll('[data-lang-link]').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (location.hash) a.href = a.href.split('#')[0] + location.hash;
+    });
+  });
 
   /* ---------- Sezione attiva nel menu ---------- */
   const navLinks = [...nav.querySelectorAll('a[href^="#"]')];
@@ -73,22 +87,22 @@
     reveals.forEach((el) => io.observe(el));
   }
 
-  /* ---------- Foto profilo ----------
-     Finché manca assets/images/profilo.jpg si vede il ritaglio dalla slide;
-     appena il file viene aggiunto alla cartella, lo sostituisce da solo. */
-  const profile = document.querySelector('[data-profile]');
-  if (profile) {
-    const probe = new Image();
-    probe.onload = () => {
-      const img = profile.querySelector('img');
-      profile.classList.remove('crop');
-      profile.removeAttribute('style');
-      profile.classList.add('is-original');
-      img.removeAttribute('width');
-      img.removeAttribute('height');
-      img.src = probe.src;
+  /* ---------- Privacy & Cookie Policy ---------- */
+  const policy = document.querySelector('[data-policy]');
+  if (policy) {
+    const closePolicy = () => {
+      if (typeof policy.close === 'function') policy.close();
+      else policy.removeAttribute('open');
     };
-    probe.src = 'assets/images/profilo.jpg';
+    document.querySelectorAll('[data-policy-open]').forEach((b) => b.addEventListener('click', () => {
+      if (typeof policy.showModal === 'function') policy.showModal();
+      else policy.setAttribute('open', '');
+      policy.querySelector('.policy__body').scrollTop = 0;
+      policy.querySelector('[data-policy-close]').focus();
+    }));
+    policy.querySelectorAll('[data-policy-close]').forEach((b) => b.addEventListener('click', closePolicy));
+    // Clic sullo sfondo scuro = chiusura (Esc è gestito dal browser)
+    policy.addEventListener('click', (e) => { if (e.target === policy) closePolicy(); });
   }
 
   /* ---------- Lightbox ---------- */
