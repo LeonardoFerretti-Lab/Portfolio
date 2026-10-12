@@ -1,97 +1,33 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Leonardo Ferretti — Graphic &amp; Web Designer, UX/UI, Illustratore</title>
-  <meta name="description" content="Portfolio di Leonardo Ferretti, Graphic e Web Designer in Toscana: identità visive, siti web responsive, UX/UI, illustrazione e storyboard.">
+  <title>Leonardo Ferretti — Graphic &amp; Web Designer, UX/UI, Illustrator</title>
+  <meta name="description" content="Portfolio of Leonardo Ferretti, Graphic and Web Designer: visual identities, responsive websites, UX/UI, illustration and storyboard.">
   <meta name="theme-color" content="#0a0a0a">
   <meta property="og:title" content="Leonardo Ferretti — Portfolio">
-  <meta property="og:description" content="Graphic & Web Designer · UX/UI · Illustrazione · Storyboard">
+  <meta property="og:description" content="Graphic & Web Designer · UX/UI · Illustration · Storyboard">
   <meta property="og:image" content="assets/images/ux-ui/ux-ui-01.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="it_IT">
+  <link rel="alternate" hreflang="en" href="./">
+  <link rel="alternate" hreflang="it" href="it/">
+  <link rel="alternate" hreflang="x-default" href="./">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="assets/js/main.js" defer></script>
-  <style>
-    /* ===== Privacy & Cookie Policy (modale) =====
-       Se i colori non coincidono con tokens.css, modifica solo queste 5 variabili. */
-    .policy, .site-footer__links {
-      --pol-bg: var(--surface, #141414);
-      --pol-text: var(--text, #f2f2f2);
-      --pol-muted: var(--text-muted, #b9b9b9);
-      --pol-accent: var(--gold, #e0b84c);
-      --pol-line: rgba(255, 255, 255, .14);
-    }
-    .site-footer__links { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 1.5rem; }
-    .site-footer__policy {
-      appearance: none; background: none; border: 0; padding: .25rem 0; margin: 0;
-      font: inherit; color: var(--pol-accent); cursor: pointer;
-      text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px;
-    }
-    .site-footer__policy:hover { text-decoration-thickness: 2px; }
-    .site-footer__policy:focus-visible,
-    .policy__close:focus-visible,
-    .policy__body a:focus-visible { outline: 2px solid var(--pol-accent); outline-offset: 3px; border-radius: 4px; }
-
-    .policy {
-      width: min(92vw, 42rem); max-height: min(85vh, 44rem);
-      padding: 0; margin: auto;
-      color: var(--pol-text); background: var(--pol-bg);
-      border: 1px solid var(--pol-accent); border-radius: 1rem;
-      box-shadow: 0 24px 80px rgba(0, 0, 0, .6);
-      overflow: hidden;
-    }
-    .policy[open] { display: flex; flex-direction: column; }
-    .policy::backdrop { background: rgba(0, 0, 0, .78); backdrop-filter: blur(4px); }
-    html:has(.policy[open]) { overflow: hidden; }
-
-    .policy__head {
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-      padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--pol-line);
-    }
-    .policy__title { margin: 0; font-size: 1.15rem; line-height: 1.3; color: var(--pol-accent); }
-    .policy__close {
-      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
-      min-width: 2.75rem; min-height: 2.75rem; padding: .5rem .9rem;
-      font: inherit; font-size: .95rem; color: var(--pol-text); cursor: pointer;
-      background: transparent; border: 1px solid var(--pol-line); border-radius: 999px;
-      transition: border-color .2s, color .2s;
-    }
-    .policy__close:hover { border-color: var(--pol-accent); color: var(--pol-accent); }
-    .policy__close .icon { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-    .policy__body { padding: 1.5rem; overflow-y: auto; overscroll-behavior: contain; }
-    .policy__body section + section { margin-top: 1.5rem; }
-    .policy__body h3 { margin: 0 0 .4rem; font-size: 1rem; color: var(--pol-accent); }
-    .policy__body p { margin: 0; line-height: 1.65; color: var(--pol-muted); }
-    .policy__body p + p { margin-top: .6rem; }
-    .policy__body a { color: var(--pol-text); text-underline-offset: .2em; }
-    .policy__body a:hover { color: var(--pol-accent); }
-
-    .policy__meta { margin: 0 0 1.5rem; font-size: .875rem; }
-    .policy__body strong { color: var(--pol-text); font-weight: 600; }
-    .policy__foot { display: flex; justify-content: flex-end; padding: 1rem 1.5rem; border-top: 1px solid var(--pol-line); }
-
-    @media (max-width: 480px) {
-      .policy__head, .policy__body, .policy__foot { padding-left: 1.1rem; padding-right: 1.1rem; }
-      .policy__close-label--head { display: none; }
-    }
-    @media (prefers-reduced-motion: no-preference) {
-      .policy[open] { animation: policy-in .22s ease-out; }
-      @keyframes policy-in { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
-    }
-  </style>
 </head>
 <body>
 
-<!-- Icone (sprite SVG inline) -->
+<!-- Icons (inline SVG sprite) -->
 <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.5h2.6l1.4 4-2 1.4a12 12 0 0 0 6.5 6.5l1.4-2 4 1.4v2.6a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/></symbol>
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="m3.5 6.5 8.5 7 8.5-7"/></symbol>
-  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/></symbol>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
@@ -113,25 +49,29 @@
   <symbol id="g-layers" viewBox="0 0 48 48"><path d="M24 7 42 16 24 25 6 16Z"/><path d="M6 24l18 9 18-9M6 32l18 9 18-9"/></symbol>
 </svg>
 
-<a class="skip-link" href="#main">Vai al contenuto</a>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header" data-header>
   <div class="site-header__inner">
-    <a class="brand" href="#top" aria-label="Leonardo Ferretti — torna all'inizio">
+    <a class="brand" href="#top" aria-label="Leonardo Ferretti — back to top">
       <span class="brand__mark" aria-hidden="true">LF</span>
       <span class="brand__name">Leonardo Ferretti</span>
     </a>
+    <div class="lang-switch" role="group" aria-label="Site language">
+      <a href="index.html" lang="en" hreflang="en" aria-current="page" aria-label="English">EN</a>
+      <a href="it/index.html" lang="it" hreflang="it" aria-label="Italiano" data-lang-link>IT</a>
+    </div>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
       <span class="nav-toggle__bars" aria-hidden="true"></span>
-      <span class="visually-hidden">Apri il menu</span>
+      <span class="visually-hidden">Open the menu</span>
     </button>
-    <nav class="site-nav" id="site-nav" aria-label="Navigazione principale" data-nav>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-nav>
       <ul>
-        <li><a href="#chi-sono">Chi sono</a></li>
-        <li><a href="#percorso">Percorso</a></li>
+        <li><a href="#chi-sono">About</a></li>
+        <li><a href="#percorso">Background</a></li>
         <li><a href="#ux-ui">UX/UI</a></li>
-        <li><a href="#illustrazione">Illustrazione</a></li>
-        <li><a class="site-nav__cta" href="#contatti">Contatti</a></li>
+        <li><a href="#illustrazione">Illustration</a></li>
+        <li><a class="site-nav__cta" href="#contatti">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -146,142 +86,139 @@
         <span class="frame hero__frame hero__frame--small"><span class="text-gold">Portfolio</span></span>
         <span class="frame hero__frame hero__frame--name"><span class="text-gold">Leonardo Ferretti</span></span>
       </h1>
-      <p class="tab tab--down hero__tab">Graphic &amp; Web Designer · UX/UI · Illustrazione</p>
+      <p class="tab tab--down hero__tab"><span>Graphic &amp; Web Designer</span><span class="hero__tab-sep" aria-hidden="true"> · </span><span>UX/UI · Illustration</span></p>
       <p class="hero__lead">
-        Progetto identità visive, siti web e illustrazioni che uniscono creatività e strategia:
-        immagini chiare, coerenti e pensate per comunicare.
+        I design visual identities, websites and illustrations that bring creativity and strategy together:
+        clear, consistent images designed to communicate.
       </p>
       <div class="hero__actions">
-        <a class="btn btn--gold" href="#ux-ui">Scopri i progetti</a>
-        <a class="btn btn--ghost" href="#contatti">Contattami</a>
+        <a class="btn btn--gold" href="#ux-ui">Explore my work</a>
+        <a class="btn btn--ghost" href="#contatti">Get in touch</a>
       </div>
-      <p class="hero__place"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Toscana, Italia</p>
     </div>
-    <a class="hero__scroll" href="#chi-sono" aria-label="Scorri a Chi sono"><span aria-hidden="true"></span></a>
+    <a class="hero__scroll" href="#chi-sono" aria-label="Scroll to About me"><span aria-hidden="true"></span></a>
   </section>
 
-  <!-- ============ CHI SONO + CONTATTI ============ -->
+  <!-- ============ ABOUT + CONTACTS ============ -->
   <section class="section" id="chi-sono" aria-labelledby="about-title">
     <div class="container bento bento--about">
       <article class="card about reveal">
-        <!-- SEGNAPOSTO: ritaglio della foto dalla slide ux-ui-02. Aggiungendo assets/images/profilo.jpg
-             main.js la sostituisce automaticamente con il file originale. -->
-        <figure class="about__photo crop" data-profile
-                style="--sw:1921; --cx:104; --cy:81; --cw:217; --ch:224;">
-          <img src="assets/images/ux-ui/ux-ui-02.webp" alt="Ritratto di Leonardo Ferretti" width="1921" height="1080" loading="lazy" decoding="async">
+        <figure class="about__photo">
+          <img src="assets/images/profilo.jpg" alt="Portrait of Leonardo Ferretti" width="900" height="900" loading="lazy" decoding="async">
         </figure>
         <div class="about__body">
-          <h2 class="label" id="about-title">Chi sono</h2>
+          <h2 class="label" id="about-title">About me</h2>
           <p class="about__intro">
-            Sono un Graphic e Web Designer con una formazione accademica in Graphic Design &amp; Multimedia
-            e radici nel linguaggio audiovisivo.
+            I'm a Graphic and Web Designer with an academic background in Graphic Design &amp; Multimedia
+            and an audiovisual foundation.
           </p>
           <p>
-            Mi occupo di identità visiva, progettazione e sviluppo di siti web responsive e creazione di contenuti
-            digitali per il web e i social media. Il montaggio video e lo storyboard completano il mio modo di lavorare:
-            ogni progetto nasce da un approccio che tiene insieme creatività e strategia, per dare forma a immagini
-            che non siano solo belle, ma chiare ed efficaci.
+            I specialize in visual identity design, responsive website design and development, and the creation of
+            digital content for web and social media. Video editing and storyboarding complete the way I work:
+            every project starts from an approach that integrates creativity and strategy, to shape images that are
+            not just beautiful, but clear and effective. I also bring AI tools such as Claude into my workflow, to
+            speed up research, copywriting and prototyping, while the design choices remain my own.
           </p>
         </div>
       </article>
 
       <aside class="card contacts reveal" aria-labelledby="contacts-title">
-        <h2 class="label" id="contacts-title">Contatti</h2>
+        <h2 class="label" id="contacts-title">Contacts</h2>
         <ul class="contact-list">
           <li><a href="tel:+393342391671"><span class="contact-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>+39 334 239 1671</a></li>
-          <li><a href="mailto:gm.leonardo.ferretti@gmail.com"><span class="contact-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>gm.leonardo.ferretti@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/leonardo-ferretti-lf" target="_blank" rel="noopener"><span class="contact-list__icon contact-list__icon--txt" aria-hidden="true">in</span>leonardo-ferretti-lf<span class="visually-hidden"> (LinkedIn, si apre in una nuova scheda)</span></a></li>
-          <li><a href="https://www.behance.net/leonardferrett" target="_blank" rel="noopener"><span class="contact-list__icon contact-list__icon--txt" aria-hidden="true">Bē</span>behance.net/leonardferrett<span class="visually-hidden"> (Behance, si apre in una nuova scheda)</span></a></li>
+          <li><a href="mailto:gm.leonardo.ferretti@gmail.com"><span class="contact-list__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>gm.leonardo.ferretti<wbr>@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/leonardo-ferretti-lf" target="_blank" rel="noopener"><span class="contact-list__icon contact-list__icon--txt" aria-hidden="true">in</span>leonardo-ferretti-lf<span class="visually-hidden"> (LinkedIn, opens in a new tab)</span></a></li>
+          <li><a href="https://www.behance.net/leonardferrett" target="_blank" rel="noopener"><span class="contact-list__icon contact-list__icon--txt" aria-hidden="true">Bē</span>behance.net/leonardferrett<span class="visually-hidden"> (Behance, opens in a new tab)</span></a></li>
         </ul>
       </aside>
     </div>
   </section>
 
-  <!-- ============ PERCORSO ============ -->
+  <!-- ============ BACKGROUND ============ -->
   <section class="section" id="percorso" aria-labelledby="path-title">
     <div class="container">
       <header class="section-head reveal">
-        <h2 class="section-head__title" id="path-title">Percorso</h2>
-        <p class="section-head__lead">Dalla regia al web design: un percorso che parte dall'immagine in movimento e arriva al progetto digitale.</p>
+        <h2 class="section-head__title" id="path-title">Background</h2>
+        <p class="section-head__lead">From film directing to web design: a journey that starts from the moving image and leads to digital design.</p>
       </header>
 
       <div class="bento bento--three">
         <article class="card reveal" aria-labelledby="edu-title">
-          <h3 class="label" id="edu-title">Formazione</h3>
+          <h3 class="label" id="edu-title">Education</h3>
           <ol class="timeline">
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>LABA</strong><span>2019 – 2023</span><span>Firenze</span></div>
+              <div class="timeline__meta"><strong>LABA</strong><span>2019 – 2023</span><span>Florence</span></div>
               <div class="timeline__body">
                 <h4>Graphic Design &amp; Multimedia</h4>
-                <p>Diploma accademico di primo livello alla Libera Accademia di Belle Arti: grafica, web design e UX/UI, video digitale, animazione 3D e tecnologie multimediali per progetti visivi integrati su media diversi.</p>
+                <p>Bachelor's degree programme at the Libera Accademia di Belle Arti, focused on graphic design, web design, UX/UI, digital video, 3D animation and multimedia technologies for the creation of integrated visual projects across different media.</p>
               </div>
             </li>
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>SNCI</strong><span>2018 – 2019</span><span>Firenze</span></div>
+              <div class="timeline__meta"><strong>SNCI</strong><span>2018 – 2019</span><span>Florence</span></div>
               <div class="timeline__body">
-                <h4>Scuola Nazionale di Cinema Indipendente</h4>
-                <p>Fondamenti di montaggio, grammatica cinematografica e regia, affiancati dalle tecniche di ripresa in studio.</p>
+                <h4>National School of Independent Cinema</h4>
+                <p>Training focused on editing fundamentals, film grammar and directing, combined with studio shooting techniques.</p>
               </div>
             </li>
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>Liceo Artistico P. Petrocchi</strong><span>2013 – 2018</span><span>Pistoia</span></div>
+              <div class="timeline__meta"><strong>P. Petrocchi Art High School</strong><span>2013 – 2018</span><span>Pistoia</span></div>
               <div class="timeline__body">
-                <h4>Liceo Artistico</h4>
-                <p>Indirizzo Audiovisivo e Multimediale.</p>
+                <h4>Art High School</h4>
+                <p>Audiovisual and Multimedia specialization.</p>
               </div>
             </li>
           </ol>
         </article>
 
         <article class="card reveal" aria-labelledby="work-title">
-          <h3 class="label" id="work-title">Esperienze</h3>
+          <h3 class="label" id="work-title">Work experience</h3>
           <ol class="timeline">
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>Weopera</strong><span>2024 – oggi</span><span>Buggiano</span></div>
+              <div class="timeline__meta"><strong>Weopera</strong><span>2024 – present</span><span>Buggiano</span></div>
               <div class="timeline__body">
                 <h4>Graphic Design · Web Design</h4>
-                <p>Progettazione e sviluppo di siti web responsive, contenuti grafici e montaggi video per i social, gestione dell'identità di marca e della comunicazione digitale.</p>
+                <p>Design and development of responsive websites, creation of graphic content and social media video editing, managing brand identity and digital communication.</p>
               </div>
             </li>
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>NewtonTrusth</strong><span>Maggio – Giugno 2026</span><span>Da remoto</span></div>
+              <div class="timeline__meta"><strong>NewtonTrusth</strong><span>May – June 2026</span><span>Remote</span></div>
               <div class="timeline__body">
                 <h4>Graphic Design · UX/UI</h4>
-                <p>Sviluppo dell'identità visiva, dei contenuti digitali e dei materiali di marketing per una piattaforma automotive di lusso.</p>
+                <p>Remote role focused on developing the visual identity, digital content and marketing materials for a premium luxury automotive platform.</p>
               </div>
             </li>
             <li class="timeline__item">
               <div class="timeline__meta"><strong>Freelance</strong><span>2023 – 2024</span></div>
               <div class="timeline__body">
-                <h4>Graphic Design · Illustrazione</h4>
-                <p>Loghi e identità illustrate per eventi, festival e clienti privati.</p>
+                <h4>Graphic Design · Illustration</h4>
+                <p>Logo design and illustrated brand identities for events, festivals and private clients.</p>
               </div>
             </li>
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>Diaframma Srl</strong><span>Giugno – Agosto 2019</span><span>Prato</span></div>
+              <div class="timeline__meta"><strong>Diaframma Srl</strong><span>June – August 2019</span><span>Prato</span></div>
               <div class="timeline__body">
                 <h4>Grip</h4>
-                <p>Casa di produzione specializzata in spot di giocattoli: gestione di supporti camera, rigging e attrezzatura di set per camera e luci.</p>
+                <p>Production company specialized in toy commercials: managed camera supports, rigging and on-set equipment for camera and lighting.</p>
               </div>
             </li>
           </ol>
         </article>
 
         <article class="card reveal" aria-labelledby="other-title">
-          <h3 class="label" id="other-title">Altre esperienze</h3>
+          <h3 class="label" id="other-title">Other experience</h3>
           <ol class="timeline">
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>Talentform</strong><span>Maggio – Luglio 2023</span><span>Online</span></div>
+              <div class="timeline__meta"><strong>Talentform</strong><span>May – July 2023</span><span>Online</span></div>
               <div class="timeline__body">
-                <h4>Corso di Storyboard</h4>
-                <p>Formazione per imparare a pre-visualizzare, attraverso il disegno, la sequenza delle inquadrature di spot, videoclip e cortometraggi.</p>
+                <h4>Storyboard course</h4>
+                <p>Training aimed at pre-visualizing, through drawing, the sequence of shots for commercials, music videos and short films.</p>
               </div>
             </li>
             <li class="timeline__item">
-              <div class="timeline__meta"><strong>LURT</strong><span>Luglio 2022</span><span>Sicilia</span></div>
+              <div class="timeline__meta"><strong>LURT</strong><span>July 2022</span><span>Sicily</span></div>
               <div class="timeline__body">
-                <h4>Laboratorio di documentario</h4>
-                <p>Laboratorio dedicato alla rigenerazione territoriale, con lo sviluppo di tecniche di ripresa dal vero.</p>
+                <h4>Documentary laboratory</h4>
+                <p>Laboratory focused on territorial regeneration, developing real-life filming techniques.</p>
               </div>
             </li>
           </ol>
@@ -289,137 +226,135 @@
       </div>
 
       <article class="card tools reveal" aria-labelledby="tools-title">
-        <h3 class="label" id="tools-title">Strumenti</h3>
+        <h3 class="label" id="tools-title">Tools</h3>
         <ul class="tools__list">
-          <li class="tool" style="--tool-bg:#330000; --tool-fg:#ff9a00;"><span class="tool__icon" aria-hidden="true">Ai</span><span class="tool__name">Illustrator</span></li>
-          <li class="tool" style="--tool-bg:#001e36; --tool-fg:#31a8ff;"><span class="tool__icon" aria-hidden="true">Ps</span><span class="tool__name">Photoshop</span></li>
-          <li class="tool" style="--tool-bg:#00005b; --tool-fg:#9999ff;"><span class="tool__icon" aria-hidden="true">Ae</span><span class="tool__name">After Effects</span></li>
-          <li class="tool" style="--tool-bg:#49021f; --tool-fg:#ff3366;"><span class="tool__icon" aria-hidden="true">Id</span><span class="tool__name">InDesign</span></li>
-          <li class="tool" style="--tool-bg:#00005b; --tool-fg:#b3b3ff;"><span class="tool__icon" aria-hidden="true">Pr</span><span class="tool__name">Premiere Pro</span></li>
-          <li class="tool" style="--tool-bg:#470137; --tool-fg:#ff61f6;"><span class="tool__icon" aria-hidden="true">Xd</span><span class="tool__name">Adobe XD</span></li>
-          <li class="tool" style="--tool-bg:#1e1e1e; --tool-fg:#a259ff;"><span class="tool__icon" aria-hidden="true">Fi</span><span class="tool__name">Figma</span></li>
-          <li class="tool" style="--tool-bg:#0e2a3a; --tool-fg:#3fa8d8;"><span class="tool__icon" aria-hidden="true">Wp</span><span class="tool__name">WordPress</span></li>
-          <li class="tool" style="--tool-bg:#1d2a38; --tool-fg:#f5922a;"><span class="tool__icon" aria-hidden="true">Bl</span><span class="tool__name">Blender</span></li>
-          <li class="tool" style="--tool-bg:#0b1440; --tool-fg:#8fb3ff;"><span class="tool__icon" aria-hidden="true">C4D</span><span class="tool__name">Cinema 4D</span></li>
-        </ul>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/illustrator.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">Illustrator</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/photoshop.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">Photoshop</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/after-effects.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">After Effects</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/indesign.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">InDesign</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/premiere-pro.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">Premiere Pro</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/xd.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">Adobe XD</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/figma.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">Figma</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/wordpress.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">WordPress</span></li>
+          <li class="tool"><span class="tool__icon"><img src="assets/images/tools/blender.png" alt="" width="64" height="64" loading="lazy" decoding="async"></span><span class="tool__name">Blender</span></li>        </ul>
       </article>
     </div>
   </section>
 
-  <!-- ============ PROGETTI UX/UI ============ -->
+  <!-- ============ UX/UI PROJECTS ============ -->
   <section class="section section--projects" id="ux-ui" aria-labelledby="ux-title">
     <div class="container">
       <header class="cover reveal">
         <h2 class="cover__title" id="ux-title">
-          <span class="frame cover__frame"><span class="cover__kicker">Progetti</span><span class="text-gold">UX/UI &amp; Web Design</span></span>
+          <span class="frame cover__frame"><span class="cover__kicker">Projects</span><span class="text-gold">UX/UI &amp; Web Design</span></span>
         </h2>
-        <p class="tab tab--down cover__tab">4 progetti</p>
-        <p class="cover__lead">Siti, landing page e identità digitali progettati a partire dalle persone che li useranno: gerarchie chiare, contenuti leggibili e un linguaggio visivo coerente con il brand.</p>
+        <p class="tab tab--down cover__tab">4 projects</p>
+        <p class="cover__lead">Websites, landing pages and digital identities designed around the people who will use them: clear hierarchies, readable content and a visual language consistent with the brand.</p>
       </header>
 
-      <!-- Progetto 1 -->
+      <!-- Project 1 -->
       <article class="project" id="demo-it" aria-labelledby="p1-title">
         <div class="project__info">
           <h3 class="frame project__title reveal" id="p1-title">Demo IT</h3>
           <div class="card project__desc reveal">
-            <p class="project__type">Redesign sito web · Logo</p>
-            <p>Per Demo IT SRL ho ripensato il sito aziendale per offrire un'esperienza più intuitiva, chiara e allineata al brand. Un'analisi euristica ha evidenziato i margini di miglioramento su usabilità, gerarchia visiva e comunicazione dei contenuti, con particolare attenzione alla resa su mobile, alla leggibilità e all'efficacia delle call to action.</p>
-            <p>In parallelo ho disegnato un nuovo logo costruito su forme geometriche fluide, che comunicano connessione, innovazione e affidabilità. Il risultato è un design minimale, professionale e tecnologico, che migliora funzionalità e coinvolgimento e sostiene gli obiettivi di comunicazione e conversione dell'azienda.</p>
+            <p class="project__type">Website redesign · Logo</p>
+            <p>For Demo IT SRL, I redesigned the company website to create a more intuitive, clear and brand-aligned user experience. A heuristic analysis identified opportunities to improve usability, visual hierarchy and content communication, with particular attention to mobile responsiveness, readability and effective calls to action.</p>
+            <p>In parallel, I developed a modern logo built on fluid geometric shapes that convey connection, innovation and reliability. The result is a minimalist, professional and high-tech design that enhances functionality, visual appeal and user engagement while supporting the company's communication and conversion goals.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ul class="goals__list">
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-cube"/></svg></span><span class="goal__text">Design innovativo e high-tech</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-print"/></svg></span><span class="goal__text">Identità visiva moderna e coerente</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-teach"/></svg></span><span class="goal__text">Guidare e informare il cliente</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-cube"/></svg></span><span class="goal__text">Innovative and high-tech design</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-print"/></svg></span><span class="goal__text">Modern and consistent visual identity</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-teach"/></svg></span><span class="goal__text">Client education and guidance</span></li>
             </ul>
           </div>
         </div>
         <div class="project__media reveal">
-          <!-- SEGNAPOSTO: ritaglio della slide ux-ui-03. Sostituire con mockup singoli (sito desktop, mobile, logo). -->
-          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-03.webp" data-gallery="demo-it" data-caption="Demo IT — redesign del sito e nuovo logo">
-            <img src="assets/images/ux-ui/ux-ui-03.webp" alt="Mockup del sito Demo IT su laptop e smartphone, schermata Backup as a Service, sezione servizi e nuovo logo" width="1921" height="1080" loading="lazy" decoding="async">
+          <!-- PLACEHOLDER: crop of slide ux-ui-03. Replace with single mockups (desktop site, mobile, logo). -->
+          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-03.webp" data-gallery="demo-it" data-caption="Demo IT — website redesign and new logo">
+            <img src="assets/images/ux-ui/ux-ui-03.webp" alt="Mockup of the Demo IT website on a laptop and a smartphone, the Backup as a Service page, the services section and the new logo" width="1921" height="1080" loading="lazy" decoding="async">
             <span class="media__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
           </a>
         </div>
       </article>
 
-      <!-- Progetto 2 -->
+      <!-- Project 2 -->
       <article class="project" id="naive-shore" aria-labelledby="p2-title">
         <div class="project__info">
           <h3 class="frame project__title reveal" id="p2-title">Naive Shore</h3>
           <div class="card project__desc reveal">
             <p class="project__type">Branding · UX/UI · E-commerce</p>
-            <p>Naive Shore è un progetto completo di branding e UX/UI per un marchio di tavole da surf artigianali. Ho sviluppato un'identità visiva coesa — logo, grafiche dedicate per le tavole e palette cromatica — che riflette i valori del brand: artigianalità, autenticità e uno stile di vita rilassato.</p>
-            <p>Sito e presenza social sono pensati per raccontare la community, valorizzare i contenuti visivi e offrire un'esperienza digitale semplice e immersiva, in cui estetica, storytelling e funzionalità lavorano insieme.</p>
+            <p>Naive Shore is a comprehensive branding and UX/UI design project for a handcrafted surfboard brand. The work includes a cohesive visual identity — a custom logo, bespoke board graphics and a colour palette — aligned with the brand's core values: craftsmanship, authenticity and a relaxed lifestyle.</p>
+            <p>The website and social media presence were designed to showcase the community, highlight visual content and provide a simple yet immersive digital experience, where aesthetics, storytelling and functionality work together.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ul class="goals__list">
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-sun"/></svg></span><span class="goal__text">Uno stile accogliente e rassicurante</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-puzzle"/></svg></span><span class="goal__text">Un sistema di identità di marca</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-tag"/></svg></span><span class="goal__text">Brand awareness e community</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-sun"/></svg></span><span class="goal__text">Welcoming and reassuring style</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-puzzle"/></svg></span><span class="goal__text">Brand identity system</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-tag"/></svg></span><span class="goal__text">Brand awareness and community</span></li>
             </ul>
           </div>
         </div>
         <div class="project__media reveal">
-          <!-- SEGNAPOSTO: ritaglio della slide ux-ui-04. Sostituire con mockup singoli. -->
-          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-04.webp" data-gallery="naive-shore" data-caption="Naive Shore — branding ed e-commerce">
-            <img src="assets/images/ux-ui/ux-ui-04.webp" alt="Sito e-commerce Naive Shore su monitor, tavola da surf con grafica dedicata, costruzione del logo e post social della collezione Faded Sunset" width="1921" height="1081" loading="lazy" decoding="async">
+          <!-- PLACEHOLDER: crop of slide ux-ui-04. Replace with single mockups. -->
+          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-04.webp" data-gallery="naive-shore" data-caption="Naive Shore — branding and e-commerce">
+            <img src="assets/images/ux-ui/ux-ui-04.webp" alt="Naive Shore e-commerce website on a monitor, a surfboard with custom graphics, the logo construction grid and social posts for the Faded Sunset collection" width="1921" height="1081" loading="lazy" decoding="async">
             <span class="media__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
           </a>
         </div>
       </article>
 
-      <!-- Progetto 3 -->
+      <!-- Project 3 -->
       <article class="project" id="studio-lupi" aria-labelledby="p3-title">
         <div class="project__info">
           <h3 class="frame project__title reveal" id="p3-title">Studio Lupi &amp; Associati</h3>
           <div class="card project__desc reveal">
-            <p class="project__type">Studio tributario · Sito one-page</p>
-            <p>Il sito è concepito come un'esperienza one-page: la navigazione si semplifica e accompagna l'utente in un percorso chiaro e continuo, che restituisce subito l'identità dello studio e i suoi servizi.</p>
-            <p>Il marmo è l'elemento visivo portante: evoca solidità e trasmette stabilità e affidabilità, mentre la sua texture raffinata introduce un'estetica elegante e istituzionale, che riflette l'autorevolezza della professione. Il design bilancia chiarezza e ricercatezza, per una presenza digitale credibile e coerente con i valori di uno studio di consulenza tributaria.</p>
+            <p class="project__type">Tax advisory firm · One-page website</p>
+            <p>The website was designed as a one-page experience, simplifying navigation and guiding users through a clear, continuous journey that conveys the firm's identity and services at a glance.</p>
+            <p>Marble is the primary visual element: it evokes structural solidity and conveys stability and reliability, while its refined texture introduces an elegant, institutional aesthetic that reflects the authority of the profession. The design balances clarity and visual sophistication, creating a trustworthy digital presence aligned with the values of a tax advisory firm.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ul class="goals__list">
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-globe"/></svg></span><span class="goal__text">Una presenza online solida</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-gem"/></svg></span><span class="goal__text">Chiarezza ed eleganza</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-column"/></svg></span><span class="goal__text">Autorevolezza in una sola pagina</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-globe"/></svg></span><span class="goal__text">Strong online presence</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-gem"/></svg></span><span class="goal__text">Clarity and elegance</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-column"/></svg></span><span class="goal__text">Authority within a single page</span></li>
             </ul>
           </div>
         </div>
         <div class="project__media reveal">
-          <!-- SEGNAPOSTO: ritaglio della slide ux-ui-05. Sostituire con mockup singoli. -->
-          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-05.webp" data-gallery="studio-lupi" data-caption="Studio Lupi &amp; Associati — sito one-page">
-            <img src="assets/images/ux-ui/ux-ui-05.webp" alt="Mockup del sito one-page dello studio tributario Lupi &amp; Associati, con texture in marmo" width="1921" height="1080" loading="lazy" decoding="async">
+          <!-- PLACEHOLDER: crop of slide ux-ui-05. Replace with single mockups. -->
+          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-05.webp" data-gallery="studio-lupi" data-caption="Studio Lupi &amp; Associati — one-page website">
+            <img src="assets/images/ux-ui/ux-ui-05.webp" alt="Mockup of the one-page website for the Lupi &amp; Associati tax advisory firm, with a marble texture" width="1921" height="1080" loading="lazy" decoding="async">
             <span class="media__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
           </a>
         </div>
       </article>
 
-      <!-- Progetto 4 -->
+      <!-- Project 4 -->
       <article class="project" id="weopera" aria-labelledby="p4-title">
         <div class="project__info">
-          <h3 class="frame project__title reveal" id="p4-title">Landing page Weopera</h3>
+          <h3 class="frame project__title reveal" id="p4-title">Weopera landing page</h3>
           <div class="card project__desc reveal">
             <p class="project__type">Landing page · Lead generation</p>
-            <p>Ho progettato la landing page di Weopera, agenzia specializzata in sviluppo web, e-commerce e strategie SEO, con l'obiettivo di aumentare le conversioni e comunicare con chiarezza il valore dei servizi.</p>
-            <p>Il concept ruota attorno al tema dello spazio, metafora del percorso di crescita digitale: il cliente parte da una condizione di incertezza e, grazie alle competenze dell'agenzia, viene guidato verso risultati misurabili. La pagina è costruita come un funnel narrativo progressivo, che accompagna l'utente dalla curiosità iniziale fino alla richiesta di una consulenza.</p>
+            <p>I designed the landing page for Weopera, an agency specializing in web development, e-commerce and SEO strategies, with the goal of improving user conversion and clearly communicating the value of its services.</p>
+            <p>The creative concept revolves around the theme of space, used as a metaphor for the digital growth journey: clients begin in a state of uncertainty and are guided toward measurable results through the agency's expertise. The page is built as a progressive narrative funnel, leading users from initial curiosity to requesting a consultation.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ul class="goals__list">
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-target"/></svg></span><span class="goal__text">Trasformare gli utenti in lead</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-rocket"/></svg></span><span class="goal__text">Un design innovativo</span></li>
-              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-layers"/></svg></span><span class="goal__text">Uno stile coerente con il sito</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-target"/></svg></span><span class="goal__text">Converting users into leads</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-rocket"/></svg></span><span class="goal__text">Innovative design</span></li>
+              <li class="goal"><span class="goal__icon"><svg aria-hidden="true"><use href="#g-layers"/></svg></span><span class="goal__text">Visual style aligned with the website</span></li>
             </ul>
           </div>
         </div>
         <div class="project__media reveal">
-          <!-- SEGNAPOSTO: ritaglio della slide ux-ui-06. Sostituire con mockup singoli. -->
-          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-06.webp" data-gallery="weopera" data-caption="Weopera — landing page a tema spaziale">
-            <img src="assets/images/ux-ui/ux-ui-06.webp" alt="Mockup della landing page Weopera a tema spaziale su diversi dispositivi" width="1921" height="1080" loading="lazy" decoding="async">
+          <!-- PLACEHOLDER: crop of slide ux-ui-06. Replace with single mockups. -->
+          <a class="media crop crop--slide" href="assets/images/ux-ui/ux-ui-06.webp" data-gallery="weopera" data-caption="Weopera — space-themed landing page">
+            <img src="assets/images/ux-ui/ux-ui-06.webp" alt="Mockup of the space-themed Weopera landing page on different devices" width="1921" height="1080" loading="lazy" decoding="async">
             <span class="media__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
           </a>
         </div>
@@ -427,203 +362,210 @@
     </div>
   </section>
 
-  <!-- ============ PROGETTI ILLUSTRAZIONE (variante viola) ============ -->
+  <!-- ============ ILLUSTRATION PROJECTS (purple variant) ============ -->
   <section class="section section--projects theme-ill" id="illustrazione" aria-labelledby="ill-title">
     <div class="container">
       <header class="cover reveal">
         <h2 class="cover__title" id="ill-title">
-          <span class="frame cover__frame"><span class="cover__kicker">Progetti</span><span class="text-gold">Illustrazione &amp; Storyboard</span></span>
+          <span class="frame cover__frame"><span class="cover__kicker">Projects</span><span class="text-gold">Illustration &amp; Storyboard</span></span>
         </h2>
-        <p class="tab tab--down cover__tab">5 progetti</p>
-        <p class="cover__lead">Illustrazione digitale e vettoriale, editoria e narrazione per immagini: progetti in cui la sintesi grafica diventa racconto.</p>
+        <p class="tab tab--down cover__tab">5 projects</p>
+        <p class="cover__lead">Digital and vector illustration, publishing and visual storytelling: projects in which graphic synthesis becomes narrative.</p>
       </header>
 
-      <!-- Progetto 5 -->
+      <!-- Project 5 -->
       <article class="project" id="lezioni-americane" aria-labelledby="p5-title">
         <div class="project__info">
-          <h3 class="frame project__title project__title--long reveal" id="p5-title">Lezioni americane <span class="project__subtitle">Six Memos for the Next Millennium</span></h3>
+          <h3 class="frame project__title project__title--long reveal" id="p5-title">Six Memos for the Next Millennium <span class="project__subtitle" lang="it">Lezioni americane</span></h3>
           <div class="card project__desc reveal">
-            <p class="project__type">Libro illustrato · Ricerca artistica</p>
-            <p>Ispirato al saggio di Italo Calvino, il progetto è una ricerca sperimentale sulla traduzione visiva di leggerezza, rapidità, esattezza, visibilità e molteplicità. Le illustrazioni sono sintetiche e atmosferiche, costruite su forme geometriche e composizioni essenziali; lo stesso linguaggio definisce l'impaginazione, in un sistema visivo coerente.</p>
-            <p>La grana, come una polvere di particelle, fa vibrare forme, corpi e atmosfere e dà materia alle immagini. Il concept editoriale prevede un volume per ogni lezione, riconoscibile dal numero in copertina: un dialogo tra letteratura e immagine che trasforma concetti astratti in narrazioni visive contemporanee.</p>
+            <p class="project__type">Illustrated book · Artistic research</p>
+            <p>Inspired by Italo Calvino's essay, the project is an experimental artistic research exploring the visual translation of lightness, speed, exactness, visibility and multiplicity through illustration. The visuals are synthetic and atmospheric, built on geometric forms and essential compositions; the same geometric language defines the editorial layout, creating a coherent visual system.</p>
+            <p>Grain, like a dust of particles, makes shapes, bodies and atmospheres vibrate and gives the images substance. The editorial concept includes one volume per memo, recognisable by the number on the cover: a dialogue between literature and image that turns abstract concepts into contemporary visual narratives.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ol class="goals__list">
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Tradurre in immagini i concetti del saggio</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Sviluppare illustrazioni digitali evocative</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Uno stile grafico ed editoriale coerente</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Visually translating the concepts of the essay</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Developing evocative digital illustrations</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Maintaining a coherent graphic and editorial style</span></li>
             </ol>
           </div>
         </div>
         <div class="project__media reveal">
           <div class="gallery gallery--calvino">
-            <a class="media gallery__wide" href="assets/images/lezioni-americane/lezioni-americane-01.webp" data-gallery="calvino" data-caption="Lezioni americane — copertina del volume 1, Leggerezza">
-              <img src="assets/images/lezioni-americane/lezioni-americane-01.webp" alt="Mockup del volume Lezioni americane – Leggerezza: copertina viola con cornice lineare e doppia pagina con illustrazione di un uomo in volo sopra Firenze" width="3000" height="2250" loading="lazy" decoding="async">
+            <a class="media gallery__wide" href="assets/images/lezioni-americane/lezioni-americane-01.webp" data-gallery="calvino" data-caption="Six Memos — cover of volume 1, Lightness">
+              <img src="assets/images/lezioni-americane/lezioni-americane-01.webp" alt="Mockup of the volume Lezioni americane – Leggerezza (Lightness): purple cover with a line frame and a spread with an illustration of a man flying over Florence" width="3000" height="2250" loading="lazy" decoding="async">
             </a>
-            <div class="gallery__strip" role="group" aria-label="Le cinque illustrazioni del capitolo Leggerezza">
-            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-02.webp" data-gallery="calvino" data-caption="Leggerezza — illustrazione 1">
-              <img src="assets/images/lezioni-americane/lezioni-americane-02.webp" alt="Illustrazione granulosa: una sfera scura davanti a un alone luminoso rosato nel cielo stellato" width="1400" height="2518" loading="lazy" decoding="async">
+            <div class="gallery__strip" role="group" aria-label="The five illustrations of the Lightness chapter">
+            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-02.webp" data-gallery="calvino" data-caption="Lightness — illustration 1">
+              <img src="assets/images/lezioni-americane/lezioni-americane-02.webp" alt="Grainy illustration: a dark sphere in front of a glowing pink halo in a starry sky" width="1400" height="2518" loading="lazy" decoding="async">
             </a>
-            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-03.webp" data-gallery="calvino" data-caption="Leggerezza — illustrazione 2">
-              <img src="assets/images/lezioni-americane/lezioni-americane-03.webp" alt="Illustrazione verticale dalla serie Leggerezza" width="1400" height="2539" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-03.webp" data-gallery="calvino" data-caption="Lightness — illustration 2">
+              <img src="assets/images/lezioni-americane/lezioni-americane-03.webp" alt="Vertical illustration from the Lightness series" width="1400" height="2539" loading="lazy" decoding="async">
             </a>
-            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-04.webp" data-gallery="calvino" data-caption="Leggerezza — illustrazione 3">
-              <img src="assets/images/lezioni-americane/lezioni-americane-04.webp" alt="Illustrazione verticale dalla serie Leggerezza" width="1400" height="2536" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-04.webp" data-gallery="calvino" data-caption="Lightness — illustration 3">
+              <img src="assets/images/lezioni-americane/lezioni-americane-04.webp" alt="Vertical illustration from the Lightness series" width="1400" height="2536" loading="lazy" decoding="async">
             </a>
-            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-05.webp" data-gallery="calvino" data-caption="Leggerezza — illustrazione 4">
-              <img src="assets/images/lezioni-americane/lezioni-americane-05.webp" alt="Illustrazione verticale dalla serie Leggerezza" width="1400" height="2538" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-05.webp" data-gallery="calvino" data-caption="Lightness — illustration 4">
+              <img src="assets/images/lezioni-americane/lezioni-americane-05.webp" alt="Vertical illustration from the Lightness series" width="1400" height="2538" loading="lazy" decoding="async">
             </a>
-            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-06.webp" data-gallery="calvino" data-caption="Leggerezza — illustrazione 5">
-              <img src="assets/images/lezioni-americane/lezioni-americane-06.webp" alt="Illustrazione verticale dalla serie Leggerezza" width="1400" height="2535" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/lezioni-americane/lezioni-americane-06.webp" data-gallery="calvino" data-caption="Lightness — illustration 5">
+              <img src="assets/images/lezioni-americane/lezioni-americane-06.webp" alt="Vertical illustration from the Lightness series" width="1400" height="2535" loading="lazy" decoding="async">
             </a>
             </div>
-            <a class="media gallery__half" href="assets/images/lezioni-americane/lezioni-americane-10.webp" data-gallery="calvino" data-caption="Lezioni americane — pagine interne">
-              <img src="assets/images/lezioni-americane/lezioni-americane-10.webp" alt="Pagine interne del libro con testo impaginato, citazioni in riquadri blu e illustrazione a piena pagina" width="3000" height="2250" loading="lazy" decoding="async">
+            <a class="media gallery__half" href="assets/images/lezioni-americane/lezioni-americane-10.webp" data-gallery="calvino" data-caption="Six Memos — inside pages">
+              <img src="assets/images/lezioni-americane/lezioni-americane-10.webp" alt="Inside pages of the book with typeset text, quotes in blue boxes and a full-page illustration" width="3000" height="2250" loading="lazy" decoding="async">
             </a>
-            <a class="media gallery__half" href="assets/images/lezioni-americane/lezioni-americane-09.webp" data-gallery="calvino" data-caption="Lezioni americane — processo: dalla campitura piatta alla grana luminosa">
-              <img src="assets/images/lezioni-americane/lezioni-americane-09.webp" alt="Tre fasi di lavorazione di una spada illustrata: colore piatto, grana e bagliore finale" width="3508" height="2480" loading="lazy" decoding="async">
+            <a class="media gallery__half" href="assets/images/lezioni-americane/lezioni-americane-09.webp" data-gallery="calvino" data-caption="Six Memos — process: from flat colour to luminous grain">
+              <img src="assets/images/lezioni-americane/lezioni-americane-09.webp" alt="Three stages of an illustrated sword: flat colour, grain and the final glow" width="3508" height="2480" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
       </article>
 
-      <!-- Progetto 6 -->
+      <!-- Project 6 -->
       <article class="project" id="calendart" aria-labelledby="p6-title">
         <div class="project__info">
-          <h3 class="frame project__title reveal" id="p6-title">Contest Calendart</h3>
+          <h3 class="frame project__title reveal" id="p6-title">Calendart contest</h3>
           <div class="card project__desc reveal">
-            <p class="project__type">Illustrazione vettoriale · Concorso</p>
-            <p>Realizzata per un concorso di design, l'illustrazione usa un linguaggio vettoriale moderno per celebrare il lavoro d'ufficio, nobilitando la routine della scrivania con una trasformazione ironica: una comune spillatrice rossa diventa simbolo di velocità, innovazione ed eccellenza progettuale.</p>
-            <p>In primo piano un designer abbozza sul tavolo da disegno i dettagli tecnici di una moto, mentre sopra di lui l'idea prende forma. Linee geometriche nette, tagli diagonali decisi e campiture pulite danno vita a una moto futuristica, dove il contrasto tra grigi metallici e rosso acceso esalta volumi filanti e aerodinamici.</p>
+            <p class="project__type">Vector illustration · Contest</p>
+            <p>Created for a design contest, the illustration uses a modern vector language to celebrate office work, elevating everyday desk routines through an ironic transformation: an ordinary red stapler becomes a symbol of speed, innovation and design excellence.</p>
+            <p>In the foreground, a designer sketches the motorcycle's technical details on a drawing board while, above him, the idea takes shape. Sharp geometric lines, bold diagonal cuts and clean colour fields give life to a futuristic motorcycle, where the contrast between metallic greys and vivid red emphasizes its sleek, aerodynamic volumes.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ol class="goals__list">
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Valorizzare gli oggetti di tutti i giorni</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Sorprendere con un paradosso ironico</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Mettere in luce il valore del design</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Elevate everyday office objects</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Surprise through ironic paradox</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Highlight the value of design</span></li>
             </ol>
           </div>
         </div>
         <div class="project__media reveal">
-          <!-- SEGNAPOSTO: ritaglio della slide illustration-portfolio-05. Servono i file singoli. -->
-          <a class="media crop crop--slide" href="assets/images/illustration-portfolio/illustration-portfolio-05.webp" data-gallery="calendart" data-caption="Contest Calendart — la spillatrice che diventa moto">
-            <img src="assets/images/illustration-portfolio/illustration-portfolio-05.webp" alt="Illustrazione vettoriale: un designer disegna una moto futuristica rossa e grigia, ispirata a una spillatrice, che prende forma sopra il tavolo da disegno" width="1921" height="1080" loading="lazy" decoding="async">
+          <!-- PLACEHOLDER: crop of slide illustration-portfolio-05. Single files needed. -->
+          <a class="media crop crop--slide" href="assets/images/illustration-portfolio/illustration-portfolio-05.webp" data-gallery="calendart" data-caption="Calendart contest — the stapler that becomes a motorcycle">
+            <img src="assets/images/illustration-portfolio/illustration-portfolio-05.webp" alt="Vector illustration: a designer draws a futuristic red and grey motorcycle, inspired by a stapler, taking shape above the drawing board" width="1921" height="1080" loading="lazy" decoding="async">
             <span class="media__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
           </a>
         </div>
       </article>
 
-      <!-- Progetto 7 -->
+      <!-- Project 7 -->
       <article class="project" id="silvano-ferretti" aria-labelledby="p7-title">
         <div class="project__info">
           <h3 class="frame project__title reveal" id="p7-title">Silvano Ferretti</h3>
           <div class="card project__desc reveal">
-            <p class="project__type">Copertine · Illustrazione editoriale</p>
-            <p>Le tre copertine realizzate per Silvano Ferretti celebrano l'eccellenza nell'edilizia con un linguaggio visivo minimale e materico. Sfumature granulose e superfici texturizzate evocano cemento, pietra e materiali da costruzione, per un'esperienza quasi tattile.</p>
-            <p>Ogni copertina è dedicata a un ambito — interni, esterni e piscine — con forme geometriche e palette desaturate. Il contrasto tra il logo, deciso e strutturato, e il payoff «i sogni sono fatti a mano» esprime l'equilibrio tra competenza tecnica, solidità e cura artigianale.</p>
+            <p class="project__type">Covers · Editorial illustration</p>
+            <p>The three covers designed for Silvano Ferretti celebrate excellence in construction through a minimalist, material-driven visual language. Grainy gradients and textured surfaces evoke concrete, stone and other building materials, creating an almost tactile experience.</p>
+            <p>Each cover focuses on a distinct area — interiors, exteriors and swimming pools — using geometric forms and refined, desaturated palettes. The contrast between the bold, structured logo and the tagline “dreams are handmade” expresses the balance between technical expertise, structural solidity and meticulous craftsmanship.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ol class="goals__list">
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Comunicare la materia attraverso il design</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Evocare sensazioni tattili con la grana</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Valorizzare i prodotti tra tatto e vista</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Communicate materiality through visual design</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Evoke tactile sensations through grainy textures</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Highlight products through tactile and visual perception</span></li>
             </ol>
           </div>
         </div>
         <div class="project__media reveal">
           <div class="gallery gallery--covers">
-            <a class="media" href="assets/images/silvano-ferretti/silvano-ferretti-01.webp" data-gallery="silvano" data-caption="Silvano Ferretti — copertina Interni">
-              <img src="assets/images/silvano-ferretti/silvano-ferretti-01.webp" alt="Copertina Interni: un artigiano visto dall'alto stende l'intonaco, su fondo blu polvere con il logo Silvano Ferretti e il payoff i sogni sono fatti a mano" width="2482" height="3485" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/silvano-ferretti/silvano-ferretti-01.webp" data-gallery="silvano" data-caption="Silvano Ferretti — Interiors cover">
+              <img src="assets/images/silvano-ferretti/silvano-ferretti-01.webp" alt="Interiors cover: a craftsman seen from above spreading plaster, on a powder-blue background with the Silvano Ferretti logo and the tagline i sogni sono fatti a mano (dreams are handmade)" width="2482" height="3485" loading="lazy" decoding="async">
             </a>
-            <a class="media" href="assets/images/silvano-ferretti/silvano-ferretti-02.webp" data-gallery="silvano" data-caption="Silvano Ferretti — copertina Esterni">
-              <img src="assets/images/silvano-ferretti/silvano-ferretti-02.webp" alt="Copertina Esterni della serie Silvano Ferretti, illustrazione granulosa con palette desaturata" width="2482" height="3485" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/silvano-ferretti/silvano-ferretti-02.webp" data-gallery="silvano" data-caption="Silvano Ferretti — Exteriors cover">
+              <img src="assets/images/silvano-ferretti/silvano-ferretti-02.webp" alt="Exteriors cover from the Silvano Ferretti series, grainy illustration with a desaturated palette" width="2482" height="3485" loading="lazy" decoding="async">
             </a>
-            <a class="media" href="assets/images/silvano-ferretti/silvano-ferretti-03.webp" data-gallery="silvano" data-caption="Silvano Ferretti — copertina Piscine">
-              <img src="assets/images/silvano-ferretti/silvano-ferretti-03.webp" alt="Copertina Piscine della serie Silvano Ferretti, illustrazione granulosa con palette desaturata" width="2481" height="3485" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/silvano-ferretti/silvano-ferretti-03.webp" data-gallery="silvano" data-caption="Silvano Ferretti — Swimming pools cover">
+              <img src="assets/images/silvano-ferretti/silvano-ferretti-03.webp" alt="Swimming pools cover from the Silvano Ferretti series, grainy illustration with a desaturated palette" width="2481" height="3485" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
       </article>
 
-      <!-- Progetto 8 -->
+      <!-- Project 8 -->
       <article class="project" id="progetti-vari" aria-labelledby="p8-title">
         <div class="project__info">
-          <h3 class="frame project__title reveal" id="p8-title">Progetti vari</h3>
+          <h3 class="frame project__title reveal" id="p8-title">Various projects</h3>
           <div class="card project__desc reveal">
             <p class="project__type">Ghibellino 38 · Basketball Tournament · Space Soda</p>
-            <p>In «Ghibellino 38» reinterpreto il paesaggio per un evento podistico: il corridore e la strada collinare generano linee di forza prospettiche, declinate su t-shirt e cartoline con una triade cromatica pop ad alto contrasto.</p>
-            <p>Il movimento prosegue in «Basketball Tournament», dove una prospettiva dal basso rende monumentale l'atleta e l'intensità del gioco. Infine «Space Soda» propone una visione pop-cosmica: una bottiglia effervescente sale verso il cielo stellato. Tre progetti, un unico sistema narrativo fatto di movimento, simbolo e impatto visivo.</p>
+            <p>In “Ghibellino 38” I reinterpret the landscape for a running event: the runner and the hilly road generate dynamic perspective force lines for T-shirts and postcards, using a high-contrast pop colour triad.</p>
+            <p>The sense of movement continues in “Basketball Tournament”, where a powerful low-angle perspective monumentalizes the athlete and the intensity of the game. Finally, “Space Soda” offers a pop-cosmic vision: an effervescent bottle rising toward a starry sky. Three projects, one narrative system made of motion, symbolism and visual impact.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ol class="goals__list">
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Esercizio di stile</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Allenare la capacità di sintesi</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Ricerca di identità visive</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Stylistic exercise</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Strengthening synthesis skills</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Search for visual identities</span></li>
             </ol>
           </div>
         </div>
         <div class="project__media reveal">
           <div class="gallery gallery--various">
             <a class="media gallery__tall" href="assets/images/space-soda/space-soda-01.webp" data-gallery="various" data-caption="Space Soda">
-              <img src="assets/images/space-soda/space-soda-01.webp" alt="Space Soda: una bottiglia rossa effervescente sale tra scie gialle e arancioni verso un cielo stellato con la luna, osservata da due silhouette blu" width="2507" height="4703" loading="lazy" decoding="async">
+              <img src="assets/images/space-soda/space-soda-01.webp" alt="Space Soda: a red effervescent bottle rises between yellow and orange trails toward a starry sky with the moon, watched by two blue silhouettes" width="2507" height="4703" loading="lazy" decoding="async">
             </a>
             <a class="media" href="assets/images/basketball/basketball-01.webp" data-gallery="various" data-caption="Basketball Tournament">
-              <img src="assets/images/basketball/basketball-01.webp" alt="Basketball Tournament: un'atleta in posizione di partenza vista dal basso, accanto al canestro e al pallone, su fondo rosso" width="3765" height="3057" loading="lazy" decoding="async">
+              <img src="assets/images/basketball/basketball-01.webp" alt="Basketball Tournament: an athlete in a starting stance seen from below, next to the hoop and the ball, on a red background" width="3765" height="3057" loading="lazy" decoding="async">
             </a>
-            <!-- SEGNAPOSTO: Ghibellino 38 ritagliato dalla slide illustration-portfolio-07. Servono i file singoli. -->
-            <a class="media crop" href="assets/images/illustration-portfolio/illustration-portfolio-07.webp" data-gallery="various" data-caption="Ghibellino 38"
-               style="--sw:1921; --cx:1306; --cy:573; --cw:534; --ch:454;">
-              <img src="assets/images/illustration-portfolio/illustration-portfolio-07.webp" alt="Ghibellino 38: un corridore giallo sulla strada collinare verso un borgo, in una triade pop di blu, rosso e giallo" width="1921" height="1080" loading="lazy" decoding="async">
+            <a class="media" href="assets/images/ghibellino/ghibellino-38.jpg" data-gallery="various" data-caption="Ghibellino 38">
+              <img src="assets/images/ghibellino/ghibellino-38.jpg" alt="Ghibellino 38: a yellow runner on the hilly road toward a village, in a pop triad of blue, red and yellow" width="541" height="464" loading="lazy" decoding="async">
             </a>
           </div>
         </div>
       </article>
 
-      <!-- Progetto 9 -->
+      <!-- Project 9 -->
       <article class="project" id="storyboard" aria-labelledby="p9-title">
         <div class="project__info">
           <h3 class="frame project__title reveal" id="p9-title">Storyboard</h3>
           <div class="card project__desc reveal">
-            <p class="project__type">Animazione · Pubblicità · Editoria illustrata</p>
-            <p>Accanto all'illustrazione ho sviluppato storyboard per animazione, pubblicità ed editoria illustrata, costruendo sequenze visive che definiscono ritmo narrativo, inquadrature, movimenti dei personaggi e atmosfera delle scene.</p>
-            <p>Schizzi e tavole accompagnano la fase creativa e produttiva e permettono di visualizzare le idee prima della realizzazione. È un lavoro che ha approfondito il mio rapporto con il linguaggio cinematografico e la sintesi visiva, unendo il disegno all'attenzione per lo storytelling, la continuità e la chiarezza del racconto.</p>
+            <p class="project__type">Animation · Advertising · Illustrated publishing</p>
+            <p>In addition to illustration projects, I developed storyboards for animation, advertising and illustrated publishing, constructing visual sequences that define narrative rhythm, framing, character movement and scene atmosphere.</p>
+            <p>Sketches and project boards support the creative and production phases, making it possible to visualize ideas before final execution. This work deepened my understanding of cinematic language and visual synthesis, combining drawing with attention to storytelling, continuity and the clarity of the visual narrative.</p>
           </div>
           <div class="goals reveal">
-            <h4 class="tab tab--up goals__tab">Obiettivi</h4>
+            <h4 class="tab tab--up goals__tab">Goals</h4>
             <ol class="goals__list">
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Strutturare il racconto visivo</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Visualizzare idee e scene</span></li>
-              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Coordinare ritmo e inquadrature</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">01</span><span class="goal__text">Structuring visual storytelling</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">02</span><span class="goal__text">Visualizing ideas and scenes</span></li>
+              <li class="goal"><span class="goal__icon goal__icon--num" aria-hidden="true">03</span><span class="goal__text">Coordinating rhythm and framing</span></li>
             </ol>
           </div>
         </div>
         <div class="project__media reveal">
-          <!-- SEGNAPOSTO: ritaglio della slide illustration-portfolio-08. Servono le tavole singole. -->
-          <a class="media crop crop--slide" href="assets/images/illustration-portfolio/illustration-portfolio-08.webp" data-gallery="storyboard" data-caption="Storyboard — tavole per animazione e pubblicità">
-            <img src="assets/images/illustration-portfolio/illustration-portfolio-08.webp" alt="Quattro tavole di storyboard a matita con frecce di movimento rosse e verdi: scene d'ufficio, personaggi e sequenze di prodotto numerate" width="1921" height="1081" loading="lazy" decoding="async">
-            <span class="media__zoom" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
-          </a>
+          <div class="gallery gallery--boards">
+            <a class="media" href="assets/images/storyboard/storyboard-01.jpg" data-gallery="storyboard" data-caption="Storyboard — pencil office sequence">
+              <img src="assets/images/storyboard/storyboard-01.jpg" alt="Pencil storyboard board with nine panels: an office, a man in a hat and a colleague, with red and green arrows showing camera and character movements" width="1800" height="1210" loading="lazy" decoding="async">
+            </a>
+            <a class="media" href="assets/images/storyboard/storyboard-02.jpg" data-gallery="storyboard" data-caption="Storyboard — commercial">
+              <img src="assets/images/storyboard/storyboard-02.jpg" alt="Storyboard board with nine panels: two men in jackets react in surprise, a parcel falls and opens, red motion arrows" width="1800" height="1213" loading="lazy" decoding="async">
+            </a>
+            <a class="media" href="assets/images/storyboard/storyboard-03.jpg" data-gallery="storyboard" data-caption="Colour storyboard — Caffè Sonata, board 1">
+              <img src="assets/images/storyboard/storyboard-03.jpg" alt="Colour storyboard for a coffee commercial: a plantation, flowering coffee branches, people at work drinking a small cup of coffee" width="1800" height="1211" loading="lazy" decoding="async">
+            </a>
+            <a class="media" href="assets/images/storyboard/storyboard-04.jpg" data-gallery="storyboard" data-caption="Colour storyboard — Caffè Sonata, board 2">
+              <img src="assets/images/storyboard/storyboard-04.jpg" alt="Second colour board of the commercial: coffee beans, grinding, the espresso pouring into the cup and the Caffè Sonata package" width="1800" height="793" loading="lazy" decoding="async">
+            </a>
+          </div>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- ============ CHIUSURA / CONTATTI ============ -->
+  <!-- ============ CLOSING / CONTACT ============ -->
   <section class="section closing" id="contatti" aria-labelledby="closing-title">
     <div class="container">
       <div class="frame closing__frame reveal">
-        <h2 class="closing__title" id="closing-title">Grazie per il tuo tempo.<br> Sarò felice di realizzare con te il prossimo progetto.</h2>
-        <p class="closing__lead">Un'idea da sviluppare, un brand da costruire o un sito da ripensare: scrivimi e ne parliamo.</p>
+        <h2 class="closing__title" id="closing-title">Thank you for your time.<br> I would be happy to create the next project with you.</h2>
+        <p class="closing__lead">An idea to develop, a brand to build or a website to rethink: write to me and let's talk.</p>
       </div>
       <ul class="pill-grid reveal">
         <li><a class="pill" href="tel:+393342391671"><span class="pill__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="pill__text">+39 334 239 1671</span></a></li>
-        <li><a class="pill" href="https://www.linkedin.com/in/leonardo-ferretti-lf" target="_blank" rel="noopener"><span class="pill__icon pill__icon--txt" aria-hidden="true">in</span><span class="pill__text">leonardo-ferretti-lf<span class="visually-hidden"> (LinkedIn, si apre in una nuova scheda)</span></span></a></li>
-        <li><a class="pill" href="mailto:gm.leonardo.ferretti@gmail.com"><span class="pill__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="pill__text">gm.leonardo.ferretti@gmail.com</span></a></li>
-        <li><a class="pill" href="https://www.behance.net/leonardferrett" target="_blank" rel="noopener"><span class="pill__icon pill__icon--txt" aria-hidden="true">Bē</span><span class="pill__text">behance.net/leonardferrett<span class="visually-hidden"> (Behance, si apre in una nuova scheda)</span></span></a></li>
+        <li><a class="pill" href="https://www.linkedin.com/in/leonardo-ferretti-lf" target="_blank" rel="noopener"><span class="pill__icon pill__icon--txt" aria-hidden="true">in</span><span class="pill__text">leonardo-ferretti-lf<span class="visually-hidden"> (LinkedIn, opens in a new tab)</span></span></a></li>
+        <li><a class="pill" href="mailto:gm.leonardo.ferretti@gmail.com"><span class="pill__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><span class="pill__text">gm.leonardo.ferretti<wbr>@gmail.com</span></a></li>
+        <li><a class="pill" href="https://www.behance.net/leonardferrett" target="_blank" rel="noopener"><span class="pill__icon pill__icon--txt" aria-hidden="true">Bē</span><span class="pill__text">behance.net/leonardferrett<span class="visually-hidden"> (Behance, opens in a new tab)</span></span></a></li>
       </ul>
     </div>
   </section>
@@ -631,24 +573,24 @@
 
 <footer class="site-footer">
   <div class="container site-footer__inner">
-    <p>© <span data-year>2026</span> Leonardo Ferretti · Graphic &amp; Web Designer · Toscana, Italia</p>
+    <p>© <span data-year>2026</span> Leonardo Ferretti · Graphic &amp; Web Designer</p>
     <div class="site-footer__links">
       <button class="site-footer__policy" type="button" aria-haspopup="dialog" data-policy-open>Privacy &amp; Cookie Policy</button>
-      <a class="site-footer__top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg> Torna su</a>
+      <a class="site-footer__top" href="#top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg> Back to top</a>
     </div>
   </div>
 </footer>
 
 <!-- Lightbox -->
-<dialog class="lightbox" aria-label="Visualizzatore immagini" data-lightbox>
+<dialog class="lightbox" aria-label="Image viewer" data-lightbox>
   <div class="lightbox__inner">
     <figure class="lightbox__figure">
       <img class="lightbox__img" alt="" data-lb-img>
       <figcaption class="lightbox__caption"><span data-lb-caption></span> <span class="lightbox__count" data-lb-count></span></figcaption>
     </figure>
-    <button class="lightbox__btn lightbox__btn--close" type="button" data-lb-close aria-label="Chiudi"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
-    <button class="lightbox__btn lightbox__btn--prev" type="button" data-lb-prev aria-label="Immagine precedente"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
-    <button class="lightbox__btn lightbox__btn--next" type="button" data-lb-next aria-label="Immagine successiva"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
+    <button class="lightbox__btn lightbox__btn--close" type="button" data-lb-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button class="lightbox__btn lightbox__btn--prev" type="button" data-lb-prev aria-label="Previous image"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
+    <button class="lightbox__btn lightbox__btn--next" type="button" data-lb-next aria-label="Next image"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
   </div>
 </dialog>
 
@@ -656,93 +598,68 @@
 <dialog class="policy" id="privacy-policy" aria-labelledby="policy-title" data-policy>
   <div class="policy__head">
     <h2 class="policy__title" id="policy-title">Privacy &amp; Cookie Policy</h2>
-    <button class="policy__close" type="button" data-policy-close aria-label="Chiudi l'informativa">
+    <button class="policy__close" type="button" data-policy-close aria-label="Close the policy">
       <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
-      <span class="policy__close-label--head">Chiudi</span>
+      <span class="policy__close-label--head">Close</span>
     </button>
   </div>
   <div class="policy__body">
-    <p class="policy__meta">Informativa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) e dell'art. 122 del D.Lgs. 196/2003 (Codice Privacy). Ultimo aggiornamento: <time datetime="2026-10-09">9 ottobre 2026</time>.</p>
+    <p class="policy__meta">Information pursuant to Article 13 of Regulation (EU) 2016/679 (GDPR) and Article 122 of Italian Legislative Decree 196/2003 (Privacy Code). Last updated: <time datetime="2026-10-12">12 October 2026</time>. This is a translation: in case of discrepancies, the Italian version prevails.</p>
 
     <section aria-labelledby="pol-titolare">
-      <h3 id="pol-titolare">1. Titolare del trattamento</h3>
+      <h3 id="pol-titolare">1. Data controller</h3>
       <p>Leonardo Ferretti — Email: <a href="mailto:gm.leonardo.ferretti@gmail.com">gm.leonardo.ferretti@gmail.com</a></p>
     </section>
 
     <section aria-labelledby="pol-finalita">
-      <h3 id="pol-finalita">2. Finalità del sito</h3>
-      <p>Il sito ha scopo puramente illustrativo e promozionale del portfolio professionale del titolare.</p>
+      <h3 id="pol-finalita">2. Purpose of the website</h3>
+      <p>This website is purely illustrative and promotes the controller's professional portfolio.</p>
     </section>
 
     <section aria-labelledby="pol-dati">
-      <h3 id="pol-dati">3. Dati trattati, finalità e base giuridica</h3>
-      <p>Sul sito non sono presenti moduli di contatto (form), registrazioni o newsletter, e il sito non raccoglie né archivia direttamente dati personali degli utenti. Possono tuttavia essere trattati i dati seguenti.</p>
-      <p><strong>a) Dati di navigazione.</strong> Per il solo fatto di visitare il sito, il server che lo ospita registra automaticamente alcuni dati tecnici (ad esempio indirizzo IP, data e ora della richiesta, pagine richieste, tipo di browser e dispositivo). Sono necessari al funzionamento e alla sicurezza del sito e sono trattati sulla base del legittimo interesse del titolare (art. 6, par. 1, lett. f GDPR). Non vengono usati per identificare o profilare l'utente e sono conservati per il tempo previsto dal fornitore di hosting, di norma limitato a pochi giorni o settimane.</p>
-      <p><strong>b) Comunicazioni spontanee.</strong> L'utente può contattare il titolare esclusivamente tramite i link diretti e-mail o telefono indicati nel sito. In questo caso il titolare tratta i dati che l'utente sceglie di comunicare (ad esempio nome, indirizzo e-mail, numero di telefono, contenuto del messaggio) al solo fine di rispondere alla richiesta, sulla base di misure precontrattuali o del legittimo interesse a riscontrare le richieste ricevute (art. 6, par. 1, lett. b ed f GDPR). I dati sono conservati per il tempo necessario a rispondere e, se ne nasce un rapporto professionale, per la sua durata e per gli obblighi di legge.</p>
-      <p>Il conferimento dei dati è facoltativo, ma senza di essi non è possibile rispondere alle richieste. Non è svolta alcuna attività di profilazione né alcun processo decisionale automatizzato.</p>
+      <h3 id="pol-dati">3. Data processed, purposes and legal basis</h3>
+      <p>The website has no contact forms, registrations or newsletters, and it does not directly collect or store users' personal data. However, the following data may be processed.</p>
+      <p><strong>a) Browsing data.</strong> The website is hosted on GitHub Pages. Simply by visiting it, GitHub automatically records some technical data (for example IP address, date and time of the request, pages requested, browser and device type) to keep the service secure and working. This processing is based on the legitimate interest in keeping the website secure and operational (Art. 6(1)(f) GDPR). The controller does not use this data to identify or profile users; it is retained by GitHub for the period set out in its own privacy statement (see section 6).</p>
+      <p><strong>b) Spontaneous communications.</strong> Users can contact the controller only through the direct email or phone links shown on the website. In this case the controller processes the data the user chooses to share (for example name, email address, phone number, content of the message) solely to reply to the request, on the basis of pre-contractual measures or the legitimate interest in answering the requests received (Art. 6(1)(b) and (f) GDPR). The data is kept for as long as necessary to reply and, if a professional relationship follows, for its duration and for legal obligations.</p>
+      <p>Providing data is optional, but without it the controller cannot reply to requests. No profiling or automated decision-making takes place.</p>
     </section>
 
     <section aria-labelledby="pol-destinatari">
-      <h3 id="pol-destinatari">4. Destinatari dei dati</h3>
-      <p>I dati non sono venduti né diffusi. Possono accedervi soltanto il fornitore del servizio di hosting del sito, in qualità di responsabile del trattamento, e i fornitori dei servizi tecnici indicati in questa informativa (Google, per i font), oltre alle autorità pubbliche, se richiesto dalla legge.</p>
+      <h3 id="pol-destinatari">4. Recipients of the data</h3>
+      <p>Data is neither sold nor disclosed. It may only be accessed by GitHub, Inc., provider of the GitHub Pages hosting service (see section 6), as well as by public authorities where required by law.</p>
     </section>
 
     <section aria-labelledby="pol-cookie">
-      <h3 id="pol-cookie">5. Cookie</h3>
-      <p>Il sito non utilizza cookie di profilazione o di tracciamento commerciale (come Google Analytics o Meta Pixel), né cookie di terze parti a fini pubblicitari. Vengono usati solo cookie tecnici strettamente necessari al funzionamento della pagina: per questo, ai sensi dell'art. 122 del Codice Privacy e delle Linee guida del Garante del 10 giugno 2021, non è richiesto il consenso dell'utente e non viene mostrato alcun banner.</p>
-      <p>L'utente può in ogni momento bloccare o eliminare i cookie dalle impostazioni del proprio browser; ciò potrebbe però influire sul corretto funzionamento di alcune parti del sito.</p>
+      <h3 id="pol-cookie">5. Cookies</h3>
+      <p>The website does not use cookies or any other tracking tools. For this reason no banner and no consent are required.</p>
+      <p>Fonts are hosted directly on the website: the page does not load fonts or other resources from third-party servers.</p>
     </section>
 
     <section aria-labelledby="pol-font">
-      <h3 id="pol-font">6. Google Fonts e trasferimenti extra-UE</h3>
-      <p>Per la resa tipografica il sito utilizza il servizio esterno Google Fonts, fornito da Google Ireland Limited (con sede in Irlanda; capogruppo Google LLC, Stati Uniti). Quando la pagina viene caricata, il browser dell'utente richiede i font ai server di Google, che ricevono quindi l'indirizzo IP e i dati tecnici della richiesta. Il trattamento si fonda sul legittimo interesse del titolare a offrire una resa grafica coerente del sito (art. 6, par. 1, lett. f GDPR).</p>
-      <p>Poiché Google LLC ha sede negli Stati Uniti, i dati possono essere trasferiti fuori dallo Spazio Economico Europeo; il trasferimento avviene sulla base delle garanzie adottate da Google, tra cui l'adesione al EU-U.S. Data Privacy Framework. Informazioni sul trattamento da parte di Google sono disponibili su <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy<span class="visually-hidden"> (si apre in una nuova scheda)</span></a>.</p>
+      <h3 id="pol-font">6. Hosting and transfers outside the EU</h3>
+      <p>The website is hosted on GitHub Pages, a service provided by GitHub, Inc., based in the United States. The browsing data described in section 3a may therefore be transferred outside the European Economic Area. The transfer takes place on the basis of GitHub's participation in the EU-U.S. Data Privacy Framework. GitHub processes this data according to its own privacy statement, available at <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">docs.github.com<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
     </section>
 
     <section aria-labelledby="pol-link">
-      <h3 id="pol-link">7. Link a siti esterni</h3>
-      <p>Il sito contiene link a servizi di terze parti (ad esempio LinkedIn e Behance). Seguendo questi link l'utente lascia il sito e la raccolta di eventuali dati è regolata dalle informative dei rispettivi gestori, per le quali il titolare non è responsabile.</p>
+      <h3 id="pol-link">7. Links to external websites</h3>
+      <p>The website contains links to third-party services (for example LinkedIn and Behance). By following these links users leave the website, and any data collection is governed by the privacy policies of the respective operators, for which the controller is not responsible.</p>
     </section>
 
     <section aria-labelledby="pol-diritti">
-      <h3 id="pol-diritti">8. Diritti dell'interessato</h3>
-      <p>L'utente può in ogni momento chiedere al titolare l'accesso ai propri dati, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità e opporsi al trattamento fondato sul legittimo interesse (artt. 15-22 GDPR), scrivendo a <a href="mailto:gm.leonardo.ferretti@gmail.com">gm.leonardo.ferretti@gmail.com</a>.</p>
-      <p>Ha inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it<span class="visually-hidden"> (si apre in una nuova scheda)</span></a>) o all'autorità di controllo del proprio Paese di residenza.</p>
+      <h3 id="pol-diritti">8. Data subject rights</h3>
+      <p>Users may at any time ask the controller for access to their data, rectification, erasure, restriction of processing and portability, and may object to processing based on legitimate interest (Articles 15–22 GDPR), by writing to <a href="mailto:gm.leonardo.ferretti@gmail.com">gm.leonardo.ferretti@gmail.com</a>.</p>
+      <p>Users also have the right to lodge a complaint with the Italian Data Protection Authority (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it<span class="visually-hidden"> (opens in a new tab)</span></a>) or with the supervisory authority of their country of residence.</p>
     </section>
 
     <section aria-labelledby="pol-modifiche">
-      <h3 id="pol-modifiche">9. Modifiche all'informativa</h3>
-      <p>Il titolare può aggiornare questa informativa, ad esempio in caso di modifiche al sito o alla normativa. La versione in vigore è sempre quella pubblicata in questa finestra, con la data di ultimo aggiornamento indicata in alto.</p>
+      <h3 id="pol-modifiche">9. Changes to this policy</h3>
+      <p>The controller may update this policy, for example following changes to the website or to the law. The version in force is always the one published in this window, with the last-updated date shown at the top.</p>
     </section>
   </div>
   <div class="policy__foot">
-    <button class="policy__close" type="button" data-policy-close>Chiudi</button>
+    <button class="policy__close" type="button" data-policy-close>Close</button>
   </div>
 </dialog>
-
-<script>
-(function () {
-  var dlg = document.querySelector('[data-policy]');
-  var openers = document.querySelectorAll('[data-policy-open]');
-  if (!dlg || !openers.length) return;
-
-  function open() {
-    if (typeof dlg.showModal === 'function') dlg.showModal();
-    else dlg.setAttribute('open', '');
-    dlg.querySelector('.policy__body').scrollTop = 0;
-    dlg.querySelector('[data-policy-close]').focus();
-  }
-  function close() {
-    if (typeof dlg.close === 'function') dlg.close();
-    else dlg.removeAttribute('open');
-  }
-
-  openers.forEach(function (b) { b.addEventListener('click', open); });
-  dlg.querySelectorAll('[data-policy-close]').forEach(function (b) { b.addEventListener('click', close); });
-  // Clic sullo sfondo scuro = chiusura (Esc è gestito dal browser)
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
-})();
-</script>
 
 </body>
 </html>
